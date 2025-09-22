@@ -25,4 +25,6 @@ według średniej populacji.
 2. SELECT * FROM `country` WHERE IndepYear IS NULL; 
 3. SELECT COUNT(DISTINCT Region) FROM `country` WHERE Continent LIKE "asia"; 
 4. SELECT * FROM `country` WHERE Region = "Nordic Countries" ORDER BY `country`.`Population` DESC; 
-5. 
+5. SELECT Continent, COUNT(DISTINCT Region) AS `Liczba Region` FROM `country` GROUP BY Continent ORDER BY trim(`Continent`) ASC; 
+6. SELECT Name, LifeExpectancy FROM `country` WHERE LifeExpectancy>65 ORDER BY `country`.`LifeExpectancy` DESC 
+7. SELECT Name, District FROM `city` WHERE Name LIKE "W%" AND "%o" OR "%e";
