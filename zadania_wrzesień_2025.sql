@@ -29,5 +29,5 @@ według średniej populacji.
 6. SELECT Region , ROUND(AVG(LifeExpectancy), 1) AS srednia FROM `country` GROUP BY Region HAVING srednia>65 ORDER BY srednia DESC; 
 7. SELECT Name, District FROM `city` WHERE Name LIKE "W%" AND (Name LIKE "%o" OR Name LIKE "%e"); 
 8. !
-9. !
+9. SELECT Name, ID FROM city WHERE ID > 3 AND ID <= 12 OR ID IN (14,15,16) AND ID > 0
 10. ! SELECT Region AS region_bez_króla, AVG(Population) AS avg_pop FROM `country`; 
