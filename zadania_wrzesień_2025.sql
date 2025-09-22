@@ -26,8 +26,8 @@ według średniej populacji.
 3. SELECT COUNT(DISTINCT Region) FROM `country` WHERE Continent LIKE "asia"; 
 4. SELECT * FROM `country` WHERE Region = "Nordic Countries" ORDER BY `country`.`Population` DESC; 
 5. SELECT Continent, COUNT(DISTINCT Region) AS `Liczba Region` FROM `country` GROUP BY Continent ORDER BY trim(`Continent`) ASC; 
-6. SELECT Region , ROUND(AVG(LifeExpectancy), 1) FROM `country` GROUP BY Region HAVING AVG(LifeExpectancy)>65 ORDER BY `LifeExpectancy` DESC;  
-7. ! SELECT Name, District FROM `city` WHERE Name LIKE "W%" AND "%o" OR "%e";
+6. SELECT Region , ROUND(AVG(LifeExpectancy), 1) AS srednia FROM `country` GROUP BY Region HAVING srednia>65 ORDER BY srednia DESC; 
+7. SELECT Name, District FROM `city` WHERE Name LIKE "W%" AND (Name LIKE "%o" OR Name LIKE "%e"); 
 8. !
 9. !
 10. ! SELECT Region AS region_bez_króla, AVG(Population) AS avg_pop FROM `country`; 
