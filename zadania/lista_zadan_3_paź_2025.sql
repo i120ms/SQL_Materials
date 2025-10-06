@@ -16,7 +16,7 @@ Zad. 15.* Usuń 5 najmniej zaludnionych miast ze zbioru 3 państw o największej
 
 1. SHOW TABLES; 
 2. DESCRIBE city;
-3.
+3. INSERT INTO country (name) VALUES ('Neverland'); 
 4.
 5.
 6.
