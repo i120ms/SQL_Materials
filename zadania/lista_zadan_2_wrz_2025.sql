@@ -11,3 +11,13 @@ iii) oczekiwana długość życia: o 10 mniejsza,
 iv) władca: Sauron.
 Zad. 8. Zwiększ ID każdego z miast o 100.
 Zad. 9. Dla całego świata: podwój wartość GNP. Zachowaj poprzednią wartość GNP w GNPOld.
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
