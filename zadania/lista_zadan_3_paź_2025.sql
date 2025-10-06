@@ -1,0 +1,2 @@
+1. SHOW TABLES; 
+2. DESCRIBE city;
