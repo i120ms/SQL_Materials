@@ -18,6 +18,6 @@ Zad. 9. Dla całego świata: podwój wartość GNP. Zachowaj poprzednią wartoś
 4. UPDATE countrylanguage SET Percentage = 80 WHERE Name = 'United States';
 5. UPDATE countrylanguage SET IsOfficial = 'T' WHERE CountryCode = (SELECT CODE FROM country WHERE Name = 'Angola') AND Language IN ('Mbundu', 'Ovimbundu'); 
 6. UPDATE country SET Region = 'Nowy', HeadOfState = '123' WHERE Name IN ('China', 'Hong Kong'); 
-7. 
+7. SELECT DISTINCT District FROM city WHERE (Name LIKE 'W%e' OR Name LIKE 'W%o');
 8.UPDATE city SET ID = ID + 100 ORDER BY ID DESC;
 9.UPDATE country SET GNPOld = GNP, GNP = GNP *2; 
