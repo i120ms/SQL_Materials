@@ -9,3 +9,4 @@ SELECT * FROM regions JOIN continents ON regions.continent_id = continents.conti
   
 1. SELECT r.name region, c.name kontynent FROM regions r JOIN continents c ON r.continent_id = c.continent_id;
 2. SELECT c.name kraj, r.name region FROM countries c JOIN regions r ON c.region_id WHERE r.name = "Eastern Europe";
+3. SELECT name, language FROM country_languages JOIN countries USING(country_id) JOIN languages USING(language_id) WHERE language = "French";
