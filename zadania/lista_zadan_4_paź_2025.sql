@@ -5,4 +5,7 @@ Zad. 4. Wyświetl nazwę kraju i jego populację z roku 1997, dla każdego kraju
 Zad. 5. Poprzednie polecenie zmodyfikuj tak, aby wyświetlić także kontynent, na którym leży dane państwo.
 Zad. 6. Wypisz całkowitą powierzchnię dla każdego kontynentu (czyli co najmniej 2 kolumny: powierzchnia i nazwa kontynentu). Posortuj rosnąco według powierzchni.
 
-1. SELECT 
+SELECT * FROM regions JOIN continents ON regions.continent_id = continents.continent_id
+  
+1. SELECT r.name region, c.name kontynent FROM regions r JOIN continents c ON r.continent_id = c.continent_id;
+2. SELECT c.name kraj, r.name region FROM countries c JOIN regions r ON c.region_id WHERE r.name = "Eastern Europe";
