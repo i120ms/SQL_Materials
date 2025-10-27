@@ -12,12 +12,12 @@ iv) władca: Sauron.
 Zad. 8. Zwiększ ID każdego z miast o 100.
 Zad. 9. Dla całego świata: podwój wartość GNP. Zachowaj poprzednią wartość GNP w GNPOld.
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1. UPDATE country SET Region = 'Central Europe' WHERE Name IN ('Poland', 'Slovakia', 'Czech Republic', 'Slovenia', 'Gungary'); 
+2. UPDATE country SET Population = 2, LifeExpectancy = 75 WHERE Name = 'Heard Island and McDonald Islands'; 
+3. UPDATE country SET IndepYear = 2025 WHERE HeadOfState = 'Elisabeth II' AND IndepYear IS NULL; 
+4. UPDATE countrylanguage SET Percentage = 80 WHERE Name = 'United States';
+5. UPDATE countrylanguage SET IsOfficial = 'T' WHERE CountryCode = (SELECT CODE FROM country WHERE Name = 'Angola') AND Language IN ('Mbundu', 'Ovimbundu'); 
+6. UPDATE country SET Region = 'Nowy', HeadOfState = '123' WHERE Name IN ('China', 'Hong Kong'); 
+7. 
+8.UPDATE city SET ID = ID + 100 ORDER BY ID DESC;
+9.UPDATE country SET GNPOld = GNP, GNP = GNP *2; 
