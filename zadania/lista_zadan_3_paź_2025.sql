@@ -1,3 +1,5 @@
+Baza: world
+
 Zad. 1. Wyświetl wszystkie tabele w bazie world.
 Zad. 2. Wyświetl informacje o kolumnach tabeli city.
 Zad. 3. Utwórz nowy kraj: Neverland.
