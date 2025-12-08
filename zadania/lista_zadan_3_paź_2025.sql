@@ -25,7 +25,7 @@ Zad. 15.* Usuń 5 najmniej zaludnionych miast ze zbioru 3 państw o największej
 7. INSERT INTO countrylanguage (CountryCode, Language, IsOfficial, Percentage) SELECT 'URY', Language, IsOfficial, Percentage FROM countrylanguage WHERE CountryCode = 'ARG' ON DUPLICATE KEY UPDATE Percentage = 98;
 8. DELETE FROM country WHERE Code = 'US2';
 9. DELETE FROM countrylanguage WHERE CountryCode IN ('ARG', 'URY') AND IsOfficial = 'F';
-10. 
+10.
 11. DELETE * FROM city ORDER BY Population DESC LIMIT 5;
 12. DELETE * FROM countrylanguage
 13. SOURCE world.sql;
