@@ -1,3 +1,5 @@
+baza: nation
+
 Zad. 1. Wyświetl dwie kolumny: w jednej powinny znaleźć się nazwy regionów, a w drugiej kontynent, na którym dany region leży.
 Zad. 2. Wyświetl nazwę kraju i nazwę regionu, dla krajów, które leżą w Europie Wschodniej.
 Zad. 3. Wyświetl wszystkie kolumny, które powstaną w wyniku złączenia, które pozwoli wypisać wszystkie kraje, w którym mówi się w języku francuskim.
