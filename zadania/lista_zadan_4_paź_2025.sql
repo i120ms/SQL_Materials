@@ -12,4 +12,5 @@ SELECT * FROM regions JOIN continents ON regions.continent_id = continents.conti
 3. SELECT name, language FROM country_languages JOIN countries USING(country_id) JOIN languages USING(language_id) WHERE language = "French";
 4. SELECT name, population, year FROM `country_stats` cs JOIN countries c USING(country_id) WHERE year = 1997 AND population >= 100000000 ORDER BY population DESC;
 5. SELECT countries.name, population, year, continents.name kontynent FROM `country_stats` NATURAL JOIN countries JOIN  regions USING(region_id) JOIN continents USING(continent_id) WHERE year = 1997 AND population >= 100000000 ORDER BY population DESC;
-6.
+6. SELECT cont.name AS kontynent, SUM(c.area) AS powierzchnia FROM countries c JOIN regions r USING(region_id) JOIN continents cont USING(continent_id) GROUP BY cont.name ORDER BY powierzchnia ASC;
+
