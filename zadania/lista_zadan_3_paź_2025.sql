@@ -19,31 +19,13 @@ Zad. 15.* Usuń 5 najmniej zaludnionych miast ze zbioru 3 państw o największej
 3. INSERT INTO country (name) VALUES ('Neverland'); 
 4. INSERT INTO city (Name, CountryCode) VALUES ('Wrocław', 'FRA'), ('Rotterdam', 'FRA');
 5. INSERT INTO countrylanguage (CountryCode, Language, Percentage, IsOfficial) VALUES ('ARG', 'elozelo1', 2.0, 'F'), ('ARG', 'elozelo2', 2.2, 'F'), ('ARG', 'elozelo3', 2.5, 'F'); 
-6. INSERT INTO country (Code, Name, Continent, Region, SurfaceArea, IndepYear,
-                     Population, LifeExpectancy, GNP, GNPOld, LocalName,
-                     GovernmentForm, HeadOfState, Capital, Code2)
-SELECT 'US2', Name, Continent, Region, SurfaceArea, IndepYear,
-       Population, LifeExpectancy, GNP, GNPOld, LocalName,
-       GovernmentForm, HeadOfState, Capital, Code2 FROM country WHERE Code = 'USA';
-7. INSERT INTO countrylanguage (CountryCode, Language, IsOfficial, Percentage)
-SELECT 'URY', Language, IsOfficial, Percentage
-FROM countrylanguage
-WHERE CountryCode = 'ARG'
-ON DUPLICATE KEY UPDATE Percentage = 98;
+6. INSERT INTO country (Code, Name, Continent, Region, SurfaceArea, IndepYear, Population, LifeExpectancy, GNP, GNPOld, LocalName, GovernmentForm, HeadOfState, Capital, Code2) SELECT 'US2', Name, Continent, Region, SurfaceArea, IndepYear, Population, LifeExpectancy, GNP, GNPOld, LocalName, GovernmentForm, HeadOfState, Capital, Code2 FROM country WHERE Code = 'USA';
+7. INSERT INTO countrylanguage (CountryCode, Language, IsOfficial, Percentage) SELECT 'URY', Language, IsOfficial, Percentage FROM countrylanguage WHERE CountryCode = 'ARG' ON DUPLICATE KEY UPDATE Percentage = 98;
 8. DELETE FROM country WHERE Code = 'US2';
-9. DELETE FROM countrylanguage
-WHERE CountryCode IN ('ARG', 'URY')
-  AND IsOfficial = 'F';
-10. INSERT INTO city (ID, Name, CountryCode, District, Population)
-VALUES ( (SELECT ID FROM city WHERE Name='Wrocław'),
-         'NoweMiasto', 'POL', 'Dolnoslaskie', 100000 )
-ON DUPLICATE KEY UPDATE Population = Population * 2;
+9. DELETE FROM countrylanguage WHERE CountryCode IN ('ARG', 'URY') AND IsOfficial = 'F';
+10. INSERT INTO city (ID, Name, CountryCode, District, Population) VALUES ( (SELECT ID FROM city WHERE Name='Wrocław'), 'NoweMiasto', 'POL', 'Dolnoslaskie', 100000 ) ON DUPLICATE KEY UPDATE Population = Population * 2;
 11. DELETE * FROM city ORDER BY Population DESC LIMIT 5;
 12. DELETE * FROM countrylanguage
 13. SOURCE world.sql;
-14. INSERT INTO city (Name, CountryCode, District, Population)
-SELECT 'NewTinyCity', Code, 'Unknown', 1000
-FROM country
-ORDER BY Population ASC
-LIMIT 1;
+14. INSERT INTO city (Name, CountryCode, District, Population) SELECT 'NewTinyCity', Code, 'Unknown', 1000 FROM country ORDER BY Population ASC LIMIT 1;
 15.
