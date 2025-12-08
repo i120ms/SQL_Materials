@@ -10,7 +10,7 @@ Zad. 6. Wypisz całkowitą powierzchnię dla każdego kontynentu (czyli co najmn
 SELECT * FROM regions JOIN continents ON regions.continent_id = continents.continent_id
   
 1. SELECT r.name region, c.name kontynent FROM regions r JOIN continents c ON r.continent_id = c.continent_id;
-2. SELECT c.name kraj, r.name region FROM countries c JOIN regions r ON c.region_id=r.region_id WHERE r.name = "Eastern Europe"; 
+2. SELECT c.name kraj, r.name region FROM countries c JOIN regions r ON c.region_id = r.region_id WHERE r.name = "Eastern Europe"; 
 3. SELECT name, language FROM country_languages JOIN countries USING(country_id) JOIN languages USING(language_id) WHERE language = "French";
 4. SELECT name, population, year FROM `country_stats` cs JOIN countries c USING(country_id) WHERE year = 1997 AND population >= 100000000 ORDER BY population DESC;
 5. SELECT countries.name, population, year, continents.name kontynent FROM `country_stats` NATURAL JOIN countries JOIN  regions USING(region_id) JOIN continents USING(continent_id) WHERE year = 1997 AND population >= 100000000 ORDER BY population DESC;
