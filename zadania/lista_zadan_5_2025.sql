@@ -17,7 +17,7 @@ Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i l
 3. SELECT * FROM `projekty` 
 4. SELECT COUNT(*) FROM projekty 
    SELECT COUNT(*) FROM uczniowie;
-5.
+5. SELECT imie, nazwisko, nazwa FROM uczniowie LEFT JOIN projekty USING(id_ucznia);
 6.
 7.
 8.
