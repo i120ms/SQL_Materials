@@ -12,9 +12,9 @@ Zad. 11. Wyświetl klasę, wychowawcę i liczbę uczniów robiących projekt.
 Zad. 12. Wyświetl wychowawcę, który ma najmniej uczniów bez projektu.
 Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i liczbę uczniów nie robiących projektu.
 
-1.
-2.
-3.
+1. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko` FROM uczniowie;
+2. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko`, nazwa FROM uczniowie JOIN projekty USING (id_ucznia);
+3. 
 4.
 5.
 6.
