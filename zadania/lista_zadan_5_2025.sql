@@ -14,8 +14,9 @@ Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i l
 
 1. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko` FROM uczniowie;
 2. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko`, nazwa FROM uczniowie JOIN projekty USING (id_ucznia);
-3. 
-4.
+3. SELECT * FROM `projekty` 
+4. SELECT COUNT(*) FROM projekty 
+   SELECT COUNT(*) FROM uczniowie;
 5.
 6.
 7.
