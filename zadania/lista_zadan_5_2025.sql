@@ -22,7 +22,7 @@ Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i l
 7. SELECT wychowawca, COUNT(*), GROUP_CONCAT(nazwisko) FROM projekty RIGHT JOIN uczniowie USING(id_ucznia) JOIN klasy USING(id_klasy) WHERE projekty.nazwa IS NULL GROUP BY wychowawca;
 8. SELECT imie, nazwisko, nazwa FROM `uczniowie` LEFT JOIN projekty USING(id_ucznia) UNION SELECT imie, nazwisko, nazwa FROM `uczniowie` RIGHT JOIN projekty USING(id_ucznia);
 9.
-10.
+10. SELECT klasy.nazwa klasa, wychowawca, COUNT(*) liczba_uczniow_z_projektem FROM klasy JOIN uczniowie USING(id_klasy) JOIN projekty USING(id_ucznia) GROUP BY wychowawca ORDER BY klasa;
 11.
 12.
 13*.
