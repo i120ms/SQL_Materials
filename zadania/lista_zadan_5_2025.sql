@@ -24,4 +24,4 @@ Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i l
 10. SELECT klasy.nazwa klasa, wychowawca, COUNT(*) liczba_uczniow_z_projektem FROM klasy LEFT JOIN uczniowie USING(id_klasy) JOIN projekty USING(id_ucznia) GROUP BY wychowawca ORDER BY klasa;
 11. SELECT k.nazwa AS klasa, k.wychowawca, COUNT(u.id_ucznia) AS liczba_uczniow FROM klasy k JOIN uczniowie u USING(id_klasy) JOIN projekty p USING(id_ucznia) GROUP BY k.id_klasy, k.wychowawca; 
 12. SELECT k.wychowawca, COUNT(u.id_ucznia) AS liczba_uczniow_bez_projektu FROM klasy k JOIN uczniowie u USING(id_klasy) LEFT JOIN projekty p USING(id_ucznia) WHERE p.id_ucznia IS NULL GROUP BY k.wychowawca ORDER BY liczba_uczniow_bez_projektu ASC LIMIT 1; 
-13*.
+13*. SELECT k.nazwa AS klasa, k.wychowawca, SUM(CASE WHEN p.id_ucznia IS NOT NULL THEN 1 ELSE 0 END) AS uczniowie_z_projektem, SUM(CASE WHEN p.id_ucznia IS NOT NULL THEN 1 ELSE 0 END) AS uczniowie_bez_projektu FROM klasy k JOIN uczniowie u USING(id_klasy) LEFT JOIN projekty p USING(id_ucznia) GROUP BY k.id_klasy, k.wychowawca; 
