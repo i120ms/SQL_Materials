@@ -15,14 +15,13 @@ Zad. 13.* Wyświetl klasę, wychowawcę, liczbę uczniów robiących projekt i l
 1. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko` FROM uczniowie;
 2. SELECT CONCAT(imie, ' ', nazwisko) `imie i nazwisko`, nazwa FROM uczniowie JOIN projekty USING (id_ucznia);
 3. SELECT * FROM `projekty` 
-4. SELECT COUNT(*) FROM projekty 
-   SELECT COUNT(*) FROM uczniowie;
+4. SELECT COUNT(*) FROM projekty; SELECT COUNT(*) FROM uczniowie;
 5. SELECT imie, nazwisko, nazwa FROM uczniowie LEFT JOIN projekty USING(id_ucznia);
-6. 
+6. SELECT p.* FROM projekty p LEFT JOIN uczniowie u USING(id_ucznia) WHERE u.id_ucznia IS NULL; 
 7. SELECT wychowawca, COUNT(*), GROUP_CONCAT(nazwisko) FROM projekty RIGHT JOIN uczniowie USING(id_ucznia) JOIN klasy USING(id_klasy) WHERE projekty.nazwa IS NULL GROUP BY wychowawca;
 8. SELECT imie, nazwisko, nazwa FROM `uczniowie` LEFT JOIN projekty USING(id_ucznia) UNION SELECT imie, nazwisko, nazwa FROM `uczniowie` RIGHT JOIN projekty USING(id_ucznia);
-9.
+9. SELECT (SELECT COUNT(*) FROM projekty) AS liczba_projektow, (SELECT COUNT(*) FROM uczniowie) AS liczba_uczniow; 
 10. SELECT klasy.nazwa klasa, wychowawca, COUNT(*) liczba_uczniow_z_projektem FROM klasy JOIN uczniowie USING(id_klasy) JOIN projekty USING(id_ucznia) GROUP BY wychowawca ORDER BY klasa;
-11.
-12.
+11. SELECT k.nazwa AS klasa, k.wychowawca, COUNT(u.id_ucznia) AS liczba_uczniow FROM klasy k JOIN uczniowie u USING(id_klasy) JOIN projekty p USING(id_ucznia) GROUP BY k.id_klasy, k.wychowawca; 
+12. SELECT k.wychowawca, COUNT(u.id_ucznia) AS liczba_uczniow_bez_projektu FROM klasy k JOIN uczniowie u USING(id_klasy) LEFT JOIN projekty p USING(id_ucznia) WHERE p.id_ucznia IS NULL GROUP BY k.wychowawca ORDER BY liczba_uczniow_bez_projektu ASC LIMIT 1; 
 13*.
