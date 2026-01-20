@@ -21,7 +21,7 @@ Zad. 11. Wyświetl liczbę regionów, które mają 10 lub więcej krajów.
 Zad. 12.* Policz medianę powierzchni krajów.
 
   1.
-  2.
+  2. SELECT name, national_day FROM countries WHERE YEAR(national_day) < 1970;
   3.
   4.
   5.
