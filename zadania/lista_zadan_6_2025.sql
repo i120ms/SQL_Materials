@@ -24,7 +24,7 @@ Zad. 12.* Policz medianę powierzchni krajów.
   2. SELECT name, national_day FROM countries WHERE YEAR(national_day) < 1970;
   3.
   4. SELECT name, area FROM countries WHERE area > (SELECT AVG(area) FROM countries);
-  5.
+  5. SELECT name, area, (SELECT AVG(area) FROM countries) AS srednia FROM countries WHERE area > (SELECT AVG(area) FROM countries);
   6.
   7.
   8.
