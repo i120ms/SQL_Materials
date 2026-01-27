@@ -26,7 +26,7 @@ Zad. 12.* Policz medianę powierzchni krajów.
   4. SELECT name, area FROM countries WHERE area > (SELECT AVG(area) FROM countries);
   5. SELECT name, area, (SELECT AVG(area) FROM countries) AS srednia FROM countries WHERE area > (SELECT AVG(area) FROM countries);
   6. SELECT DISTINCT name, official FROM country_languages NATURAL JOIN countries WHERE country_id != ALL(SELECT country_id FROM country_languages WHERE official =1);
-  7.
+  7. SELECT DISTINCT name, official FROM country_languages NATURAL JOIN countries WHERE country_id != ANY(SELECT country_id FROM country_languages WHERE official =1);
   8.
   9.
   10.
