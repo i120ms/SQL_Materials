@@ -132,19 +132,3 @@ FROM (
 ) AS A;
 
 12.
-SELECT AVG(1.0 * val)
-FROM (
-    SELECT val FROM dbo.EvenRows
-     ORDER BY val
-     OFFSET (@c - 1) / 2 ROWS
-     FETCH NEXT 1 + (1 - @c % 2) ROWS ONLY
-) AS x;
-
-SELECT AVG(area) AS mediana_powierzchni
-FROM (
-    SELECT area
-    FROM countries
-    ORDER BY area
-    LIMIT 2 - (SELECT COUNT(*) FROM countries) % 2
-    OFFSET (SELECT (COUNT(*) - 1) / 2 FROM countries)
-) AS t;
