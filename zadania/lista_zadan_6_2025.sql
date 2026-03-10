@@ -86,7 +86,7 @@ FROM (
     SELECT country_id
     FROM country_stats
     GROUP BY country_id
-    HAVING MIN(population) > 10000000
+    HAVING MAX(population) > 10000000
 )  AS A;
 
 8.
