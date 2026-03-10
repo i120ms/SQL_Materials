@@ -111,7 +111,7 @@ Fuh this shi
 SELECT c.name
 FROM countries c
 WHERE EXISTS (
-    SELECT
+    SELECT *
     FROM country_stats cs
     WHERE cs.country_id = c.country_id
       AND cs.year = 2003
