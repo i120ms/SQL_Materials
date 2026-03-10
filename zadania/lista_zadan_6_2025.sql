@@ -49,9 +49,6 @@ SELECT
     END AS age
 FROM countries;
 
-
-
-
 4.
 SELECT name AS country,  area
 FROM countries
@@ -59,6 +56,7 @@ WHERE area > (
 SELECT AVG(area)
 FROM countries)
 ORDER BY area DESC; 
+  
 5.
  SELECT ct.name AS continent, c.name AS country, c.area
 FROM continents ct
@@ -81,10 +79,7 @@ FROM (
     GROUP BY country_id
     HAVING MIN(population) > 10000000
 ) AS A ;
-
-
-
-
+  
 7.
 SELECT COUNT(*) AS liczba_krajow
 FROM (
@@ -110,9 +105,6 @@ JOIN (
 ) AS avg2003
 WHERE cs.year = 2003
   AND cs.population < avg2003.avg_population;
-
-
-
 
 10.
 Fuh this shi
